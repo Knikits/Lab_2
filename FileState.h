@@ -1,7 +1,6 @@
 #ifndef FILESTATE_H
 #define FILESTATE_H
 
-
 // структурa FileState нужна для представления состояния файла с двумя полями
 struct FileState {
     bool operator!=(const FileState& other ) { // определяем оператор неравно для того, чтобы уведомлять об изменениях
@@ -11,7 +10,7 @@ struct FileState {
         return exists != other.exists || size != other.size;
     }
     bool exists;
-    int size;
+    unsigned long long size;
 };
 
 #endif // FILESTATE_H
