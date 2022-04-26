@@ -37,4 +37,13 @@ public:
     void unregisterObserver (Observer* observer);
 };
 
+template<class Observer>
+void Observable<Observer>::registerObserver (Observer* observer) {
+    if (m_count != 0) {
+        m_requests.push_back(ObserverRequest {&Observable< Observer >::registerObserver, observer});}
+    else if (observer) {
+        m_observers.erase(observer);
+    }
+}
+
 #endif // OBSERVABLE_H
