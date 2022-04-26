@@ -10,3 +10,4 @@ void ConsoleFileObserver::onFileChanged(const FileState &state) {
     cout << "Exists: " << state.exists << endl;
     cout << "Size: " << state.size << endl;
 }
+
