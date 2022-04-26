@@ -42,6 +42,15 @@ void Observable<Observer>::registerObserver (Observer* observer) {
     if (m_count != 0) {
         m_requests.push_back(ObserverRequest {&Observable< Observer >::registerObserver, observer});}
     else if (observer) {
+        m_observers.insert(observer);
+    }
+}
+
+template<class Observer>
+void Observable<Observer>::unregisterObserver (Observer* observer) {
+    if (m_count != 0) {
+        m_requests.push_back(ObserverRequest {&Observable< Observer >::unregisterObserver, observer});}
+    else if (observer) {
         m_observers.erase(observer);
     }
 }
