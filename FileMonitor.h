@@ -9,7 +9,6 @@ class FileMonitor : public Observable< FileObserver > {
 private:
     std::string m_fileName;
     FileState m_prevFileState;
-private:
     static FileState getFileState (const std::string& fileName);
 public:
     FileMonitor(const char* fileName);
