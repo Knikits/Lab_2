@@ -9,8 +9,8 @@ struct FileState {
         }
         return exists != other.exists || size != other.size;
     }
-    bool exists;
-    unsigned long long size;
+    bool exists; // факт существования
+    unsigned long long size; // размер
 };
 
 #endif // FILESTATE_H

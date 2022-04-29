@@ -9,6 +9,7 @@ CONFIG -= app_bundle
 
 SOURCES += \
         ConsoleFileObserver.cpp \
+        FileMonitor.cpp \
         main.cpp
 
 # Default rules for deployment.

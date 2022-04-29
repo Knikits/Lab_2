@@ -2,6 +2,7 @@
 #define CONSOLEFILEOBSERVER_H
 #include "FileObserver.h"
 
+// наследник класса FileObserver
 class ConsoleFileObserver : public FileObserver {
 public:
     ~ConsoleFileObserver();
