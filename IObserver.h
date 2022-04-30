@@ -11,4 +11,11 @@ public:
     void operator=(const Info&);
 };
 
+class IObserver
+{
+public:
+    virtual ~IObserver() {}
+    virtual void update(const Info&) = 0;
+};
+
 #endif // IOBSERVER_H
