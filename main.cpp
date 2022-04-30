@@ -1,5 +1,4 @@
 #include <QCoreApplication>
-#include "ConsoleFileObserver.h"
 
 /*
  Паттерн Наблюдатель включает в себя два компонента: Источник и Наблюдатель.
@@ -11,6 +10,5 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    ConsoleFileObserver observer;
     return a.exec();
 }
