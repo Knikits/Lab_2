@@ -1,7 +1,15 @@
 #ifndef IOBSERVER_H
 #define IOBSERVER_H
 
-class Info
+class IInfo
+{
+public:
+    virtual bool operator==(const IInfo&) = 0;
+    virtual bool operator!=(const IInfo&) = 0;
+    virtual void operator=(const IInfo&) = 0;
+};
+
+class Info : public IInfo //надо перенести в другой файл (монитор)
 {
 public:
     bool exist;
@@ -15,23 +23,7 @@ class IObserver
 {
 public:
     virtual ~IObserver() {}
-    virtual void update(const Info&) = 0;
+    virtual void update(const IInfo&) = 0;
 };
-
-bool Info::operator==(const Info & info)
-{
-    return !(this->operator!=(info));
-}
-
-bool Info::operator!=(const Info& info)
-{
-    return !((info.exist & exist) && (size == info.size));
-}
-
-void Info::operator=(const Info& info)
-{
-    this->size = info.size;
-    this->exist = info.exist;
-}
 
 #endif // IOBSERVER_H
