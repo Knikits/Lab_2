@@ -1,4 +1,4 @@
-#include "IObserver.h"
+#include "FileMonitor.h"
 
 bool Info::operator==(const Info & info)
 {

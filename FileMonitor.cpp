@@ -3,5 +3,5 @@
 
 void FileMonitor::update(const Info & info)
 {
-    qDebug() << "File changed" << info;
+    qDebug() << "File changed" << info.String();
 }
