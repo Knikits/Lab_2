@@ -9,16 +9,6 @@ public:
     virtual void operator=(const IInfo&) = 0;
 };
 
-class Info : public IInfo //надо перенести в другой файл (монитор)
-{
-public:
-    bool exist;
-    int size;
-    bool operator==(const Info&);
-    bool operator!=(const Info&);
-    void operator=(const Info&);
-};
-
 class IObserver
 {
 public:

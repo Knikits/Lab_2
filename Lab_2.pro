@@ -19,4 +19,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     FileMonitor.h \
-    IObserver.h
+    IObserver.h \
+    Source.h
