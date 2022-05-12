@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 SOURCES += \
         FileMonitor.cpp \
         IObserver.cpp \
+        Source.cpp \
         main.cpp
 
 # Default rules for deployment.

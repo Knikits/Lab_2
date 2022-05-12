@@ -7,7 +7,11 @@ class Source
 {
 private:
     QList<IObserver*> list;
-
+public:
+    virtual ~Source() {}
+    virtual void Sub(IObserver*);
+    virtual void Notify(IInfo*); //!!!
+    virtual void unSub(IObserver*);
 };
 
 #endif // SOURCE_H
