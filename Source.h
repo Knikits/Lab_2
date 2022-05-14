@@ -1,6 +1,6 @@
 #ifndef SOURCE_H
 #define SOURCE_H
-#include "iobserver.h"
+#include "IObserver.h"
 #include <QList>
 
 class Source
@@ -10,7 +10,7 @@ private:
 public:
     virtual ~Source() {}
     virtual void Sub(IObserver*);
-    virtual void Notify(IInfo*); //!!!
+    virtual void Notify(IInfo*);
     virtual void unSub(IObserver*);
 };
 

@@ -1,9 +1,20 @@
 #include "FileMonitor.h"
 #include <QDebug>
 
-void FileMonitor::update(const Info & info)
+bool Info::operator==(const Info & info)
 {
-    qDebug() << "File changed" << info.String();
+    return !(this->operator!=(info));
+}
+
+bool Info::operator!=(const Info & info)
+{
+    return !((info.exist & exist) && (size == info.size));
+}
+
+void Info::operator=(const Info & info)
+{
+    this->size = info.size;
+    this->exist = info.exist;
 }
 
 QString Info::String() const
@@ -13,3 +24,7 @@ QString Info::String() const
           : QString("size: ") + QString::number(size) + "/n" + QString("existing: ") + QString("False");
 }
 
+void FileMonitor::update(const IInfo & info)
+{
+    qDebug() << "File changed" << info.String();
+}

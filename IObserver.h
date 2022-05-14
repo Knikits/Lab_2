@@ -2,14 +2,11 @@
 #define IOBSERVER_H
 #include <QString>
 
-class Info
+class IInfo
 {
 public:
-    virtual ~Info(){}
+    virtual ~IInfo(){}
     virtual QString String() const = 0;
-    //virtual bool operator==(const IInfo&) = 0;
-    //virtual bool operator!=(const IInfo&) = 0;
-    //virtual void operator=(const IInfo&) = 0;
 };
 
 
@@ -17,7 +14,7 @@ class IObserver
 {
 public:
     virtual ~IObserver() {}
-    virtual void update(const Info&) = 0;
+    virtual void update(const IInfo&) = 0;
 };
 
 #endif // IOBSERVER_H
