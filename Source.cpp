@@ -16,5 +16,6 @@ void Source::Notify(IInfo * info)
 
 void Source::unSub(IObserver *observer)
 {
-    if (list.contains(observer)) list.removeOne(observer);
+    if (list.contains(observer))
+        list.removeOne(observer);
 }

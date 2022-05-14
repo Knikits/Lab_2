@@ -7,7 +7,11 @@ File::File(std::string stream)
     this->predInfo = new Info();
     struct stat statBuf;
     predInfo->exist = stat(filename.toStdString().c_str(), &statBuf) == 0;
-    predInfo->size = predInfo->exist ? statBuf.st_size : 0;
+    if (predInfo->size == predInfo->exist)
+    {
+        statBuf.st_size;
+    }
+    else 0;
 }
 
 void File::checkFile()

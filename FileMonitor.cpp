@@ -19,12 +19,17 @@ void Info::operator=(const Info & info)
 
 QString Info::String() const
 {
-    return exist ?
-            QString("size: ") + QString::number(size) + "/n" + QString("existing: ") + QString("True")
-          : QString("size: ") + QString::number(size) + "/n" + QString("existing: ") + QString("False");
+    if (exist == true)
+    {
+        return QString("Size: ") + QString::number(size) + QString(" Exist: ") + QString("True");
+    }
+    else
+    {
+        return QString("Size: ") + QString::number(size) + QString(" Exist: ") + QString("False");
+    }
 }
 
 void FileMonitor::update(IInfo* info)
 {
-    qDebug() << "File changed" << info->String();
+    qDebug() << "File changed: " << info->String();
 }

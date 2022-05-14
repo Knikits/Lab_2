@@ -10,7 +10,6 @@ CONFIG -= app_bundle
 SOURCES += \
         File.cpp \
         FileMonitor.cpp \
-        IObserver.cpp \
         Source.cpp \
         main.cpp
 
