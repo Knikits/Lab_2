@@ -5,6 +5,7 @@
 
 class Info : public IInfo
 {
+public:
     bool operator==(const Info&);
     bool operator!=(const Info&);
     void operator=(const Info&);
@@ -13,7 +14,7 @@ class Info : public IInfo
     int size;
 };
 
-class FileMonitor:public IObserver
+class FileMonitor : public IObserver
 {
 public:
     void update(IInfo*);

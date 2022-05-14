@@ -14,7 +14,7 @@ class IObserver
 {
 public:
     virtual ~IObserver() {}
-    virtual void update(const IInfo&) = 0;
+    virtual void update(IInfo*) = 0;
 };
 
 #endif // IOBSERVER_H
