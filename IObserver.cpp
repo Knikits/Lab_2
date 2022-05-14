@@ -1,5 +1,6 @@
-#include "FileMonitor.h"
+#include "IObserver.h"
 
+/*
 bool Info::operator==(const Info & info)
 {
     return !(this->operator!=(info));
@@ -15,3 +16,4 @@ void Info::operator=(const Info& info)
     this->size = info.size;
     this->exist = info.exist;
 }
+*/
