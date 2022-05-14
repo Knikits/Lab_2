@@ -15,11 +15,11 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
     FileMonitor check;
     File file("D:/Lab_2/file.txt");
-    return a.exec();
     file.Sub(&check);
     while(true)
         {
             file.checkFile();
             std::this_thread::sleep_for( std::chrono::milliseconds( 1000 ) );
         }
+    return a.exec();
 }
