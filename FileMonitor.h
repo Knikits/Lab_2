@@ -16,7 +16,7 @@ class Info : public IInfo
 class FileMonitor:public IObserver
 {
 public:
-    void update(const IInfo&);
+    void update(IInfo*);
 };
 
 #endif // FILEMONITOR_H

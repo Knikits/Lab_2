@@ -19,6 +19,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    File.h \
     FileMonitor.h \
     IObserver.h \
     Source.h

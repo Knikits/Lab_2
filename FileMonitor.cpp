@@ -24,7 +24,7 @@ QString Info::String() const
           : QString("size: ") + QString::number(size) + "/n" + QString("existing: ") + QString("False");
 }
 
-void FileMonitor::update(const IInfo & info)
+void FileMonitor::update(IInfo* info)
 {
-    qDebug() << "File changed" << info.String();
+    qDebug() << "File changed" << info->String();
 }

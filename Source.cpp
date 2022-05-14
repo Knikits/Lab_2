@@ -5,7 +5,7 @@ void Source::Sub(IObserver * observer)
     list.append(observer);
 }
 
-void Source::Notify(const IInfo & info)
+void Source::Notify(IInfo * info)
 {
     for(auto elem : list)
     {
