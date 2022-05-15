@@ -1,21 +1,29 @@
 #include "IObservable.h"
 
-void IObservable::Sub(IObserver * observer)
+//реализация методов
+
+//Подписка
+
+void IObservable::Sub(IObserver * observer) //принимает указатель на подписчика
 {
-    list.append(observer);
+    list.append(observer); // подписываем его (добавляем в список наблюдптелей)
 }
 
-void IObservable::Notify(IInfo * info)
+//Оповещение
+
+void IObservable::Notify(IInfo * info) // принимает Info для определения изменения файла
 {
-    for(auto elem : list)
+    for (auto elem : list) // проходимся по всем наблюдателям
     {
-        if (elem != nullptr)
-            elem->update(info);
+        if (elem != nullptr) // если наблюдатель существует
+            elem->update(info);  // то выполняется метод обновления информации о файле
     }
 }
 
-void IObservable::unSub(IObserver *observer)
+//Отписка
+
+void IObservable::unSub(IObserver *observer) //принимает указатель на подписчика
 {
-    if (list.contains(observer))
-        list.removeOne(observer);
+    if (list.contains(observer)) // если есть такой подписчик
+        list.removeOne(observer); // то удаляем одного наблюдателя из списка подписчиков
 }

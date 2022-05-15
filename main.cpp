@@ -13,13 +13,13 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    FileMonitor check;
-    File file("D:/Lab_2/file.txt");
-    file.Sub(&check);
+    FileMonitor check; // наблюдатель
+    File file("D:/Lab_2/file.txt"); // объект, за которым следим
+    file.Sub(&check); // оформляем подписку
     while(true)
         {
             file.checkFile();
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // секунда
         }
     return a.exec();
 }

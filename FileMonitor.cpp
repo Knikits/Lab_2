@@ -37,5 +37,5 @@ QString Info::String() const
 
 void FileMonitor::update(IInfo* info)
 {
-    qDebug() << "File changed:" << info->String();
+    qDebug() << "Info about file:" << info->String();
 }

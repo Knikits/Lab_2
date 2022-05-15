@@ -4,14 +4,16 @@
 #include "FileMonitor.h"
 #include <QList>
 
+//File - класс наследник класса IObservable, является наблюдаемым объектом
+
 class File : public IObservable
 {
 private:
-    Info* predInfo;
-    QString filename;
+    Info* predInfo; // информация о файле
+    QString filename; // имя файла
 public:
-    File (std::string);
-    void checkFile();
+    File (std::string); // для заполнения имени файла, за которым наблюдаем
+    void checkFile(); // проверка файла
 };
 
 #endif // FILE_H
