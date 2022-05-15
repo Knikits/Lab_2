@@ -10,7 +10,7 @@ CONFIG -= app_bundle
 SOURCES += \
         File.cpp \
         FileMonitor.cpp \
-        Source.cpp \
+        IObservable.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -21,5 +21,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     File.h \
     FileMonitor.h \
-    IObserver.h \
-    Source.h
+    IObservable.h \
+    IObserver.h

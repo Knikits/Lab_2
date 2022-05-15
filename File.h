@@ -1,10 +1,10 @@
 #ifndef FILE_H
 #define FILE_H
-#include "Source.h"
+#include "IObservable.h"
 #include "FileMonitor.h"
 #include <QList>
 
-class File : public Source
+class File : public IObservable
 {
 private:
     Info* predInfo;

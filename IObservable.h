@@ -1,17 +1,17 @@
-#ifndef SOURCE_H
-#define SOURCE_H
+#ifndef IOBSERVABLE_H
+#define IOBSERVABLE_H
 #include "IObserver.h"
 #include <QList>
 
-class Source
+class IObservable
 {
 private:
     QList<IObserver*> list;
 public:
-    virtual ~Source() {}
+    virtual ~IObservable() {}
     virtual void Sub(IObserver*);
     virtual void Notify(IInfo*);
     virtual void unSub(IObserver*);
 };
 
-#endif // SOURCE_H
+#endif // IOBSERVABLE_H

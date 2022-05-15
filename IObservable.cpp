@@ -1,11 +1,11 @@
-#include "Source.h"
+#include "IObservable.h"
 
-void Source::Sub(IObserver * observer)
+void IObservable::Sub(IObserver * observer)
 {
     list.append(observer);
 }
 
-void Source::Notify(IInfo * info)
+void IObservable::Notify(IInfo * info)
 {
     for(auto elem : list)
     {
@@ -14,7 +14,7 @@ void Source::Notify(IInfo * info)
     }
 }
 
-void Source::unSub(IObserver *observer)
+void IObservable::unSub(IObserver *observer)
 {
     if (list.contains(observer))
         list.removeOne(observer);

@@ -1,6 +1,8 @@
 #include "FileMonitor.h"
 #include <QDebug>
 
+// реализация операторов
+
 bool Info::operator==(const Info & info)
 {
     return !(this->operator!=(info));
@@ -17,19 +19,23 @@ void Info::operator=(const Info & info)
     this->exist = info.exist;
 }
 
+// данные о файле записываются в виде строки (QString) в консоль
+
 QString Info::String() const
 {
     if (exist == true)
     {
-        return QString("Size: ") + QString::number(size) + QString(" Exist: ") + QString("True");
+        return QString("size - ") + QString::number(size) + QString(", exist - ") + QString("true");
     }
     else
     {
-        return QString("Size: ") + QString::number(size) + QString(" Exist: ") + QString("False");
+        return QString("size - ") + QString::number(size) + QString(", exist - ") + QString("false");
     }
 }
 
+// данные о том, что файл был изменён
+
 void FileMonitor::update(IInfo* info)
 {
-    qDebug() << "File changed: " << info->String();
+    qDebug() << "File changed:" << info->String();
 }
