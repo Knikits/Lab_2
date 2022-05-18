@@ -11,6 +11,7 @@ class File : public IObservable
 private:
     Info* predInfo; // информация о файле
     QString filename; // имя файла
+    bool Missingfile;
 public:
     File (std::string); // для заполнения имени файла, за которым наблюдаем
     void checkFile(); // проверка файла

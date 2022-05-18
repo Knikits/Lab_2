@@ -14,6 +14,7 @@ File::File(std::string stream) // принимаем имя файла форм�
         predInfo->size = 0;
     }
     else predInfo->size = statBuf.st_size;
+    Missingfile = 0;
 }
 
 void File::checkFile() // вызывается в main
@@ -26,16 +27,22 @@ void File::checkFile() // вызывается в main
         info->size = 0;
     }
     else info->size = statBuf.st_size;
-    if (*predInfo != *info) // если произошли изменения в файле
+    if (info -> exist == true)
     {
-        Notify(info); // то оповещаем
-        predInfo = info; // новое состояние
+        if (*predInfo != *info) // если произошли изменения в файле
+        {
+            Notify(info); // то оповещаем
+            predInfo = info; // новое состояние
+            Missingfile = 0;
+        }
     }
     else
     {
-    qDebug() << "info " << info->exist << " ";
-    qDebug() << "info " << info->size << " ";
-    qDebug() << "info PRED" << predInfo->exist << " ";
-    qDebug() << "info PRED" << predInfo->size << " ";
+        if ((*predInfo != *info) && (Missingfile == 0)) // если произошли изменения в файле
+        {
+            Notify(info); // то оповещаем
+            predInfo = info; // новое состояние
+            Missingfile = 1;
+        }
     }
 }
