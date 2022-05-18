@@ -8,7 +8,6 @@
 class Info : public IInfo
 {
 public:
-    bool operator==(const Info&); // оператор равно
     bool operator!=(const Info&); // оператор не равно
     void operator=(const Info&); // оператор присвоения
     QString String() const; // перевод полей в QString
@@ -21,7 +20,7 @@ public:
 class FileMonitor : public IObserver
 {
 public:
-    void update(IInfo*); // обновление информации о файле
+    void update(IInfo*); // функция обновления информации о файле
 };
 
 #endif // FILEMONITOR_H

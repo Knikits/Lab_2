@@ -3,19 +3,12 @@
 
 // реализация операторов
 
-
-bool Info::operator==(const Info & info)
-{
-    return !(this->operator!=(info));
-}
-
-
-bool Info::operator!=(const Info & info)
+bool Info::operator!=(const Info & info) // оператор не равно
 {
     return !((info.exist & exist) && (size == info.size));
 }
 
-void Info::operator=(const Info & info)
+void Info::operator=(const Info & info) // оператор присвоения
 {
     this->size = info.size;
     this->exist = info.exist;
@@ -25,13 +18,13 @@ void Info::operator=(const Info & info)
 
 QString Info::String() const
 {
-    if (exist == true)
+    if (exist == true) // если файл существует
     {
-        return QString("size - ") + QString::number(size) + QString(", exist - ") + QString("true");
+        return QString("File exists, ") + QString("size - ") + QString::number(size);
     }
-    else
+    else // если не существует
     {
-        return QString("size - ") + QString::number(size) + QString(", exist - ") + QString("false");
+        return QString("File doesn't exist");
     }
 }
 
@@ -39,5 +32,5 @@ QString Info::String() const
 
 void FileMonitor::update(IInfo* info)
 {
-    qDebug() << "Info about file:" << info->String();
+    qDebug() << info->String();
 }
