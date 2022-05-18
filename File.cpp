@@ -1,5 +1,7 @@
 #include "File.h"
 #include "sys\stat.h"
+#include "iostream"
+#include <QDebug>
 
 File::File(std::string stream) // принимаем имя файла формата строки
 {
@@ -7,11 +9,11 @@ File::File(std::string stream) // принимаем имя файла форм�
     this->predInfo = new Info(); // запоминает исходное состояние
     struct stat statBuf; //специально использую #include "sys\stat.h" для запоминания инфы
     predInfo->exist = stat(filename.toStdString().c_str(), &statBuf) == 0; //далее узнаём характеристики файла
-    if (predInfo->size == predInfo->exist)
+    if (predInfo->exist == 0)
     {
-        statBuf.st_size;
+        predInfo->size = 0;
     }
-    else 0;
+    else predInfo->size = statBuf.st_size;
 }
 
 void File::checkFile() // вызывается в main
@@ -19,14 +21,21 @@ void File::checkFile() // вызывается в main
     Info* info = new Info();
     struct stat statBuf;
     info->exist = stat(filename.toStdString().c_str(), &statBuf) == 0;
-    if (info->size == predInfo->exist)
+    if (info->exist == 0)
     {
-        statBuf.st_size;
+        info->size = 0;
     }
-    else 0;
+    else info->size = statBuf.st_size;
     if (*predInfo != *info) // если произошли изменения в файле
     {
-        Notify(info); // то оповещвем
+        Notify(info); // то оповещаем
         predInfo = info; // новое состояние
+    }
+    else
+    {
+    qDebug() << "info " << info->exist << " ";
+    qDebug() << "info " << info->size << " ";
+    qDebug() << "info PRED" << predInfo->exist << " ";
+    qDebug() << "info PRED" << predInfo->size << " ";
     }
 }

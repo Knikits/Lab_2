@@ -3,10 +3,12 @@
 
 // реализация операторов
 
+
 bool Info::operator==(const Info & info)
 {
     return !(this->operator!=(info));
 }
+
 
 bool Info::operator!=(const Info & info)
 {

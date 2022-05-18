@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
     File file("D:/Lab_2/file.txt"); // объект, за которым следим
     file.Sub(&check); // оформляем подписку
     while(true)
-        {
-            file.checkFile();
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // секунда
-        }
+    {
+        file.checkFile();
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // секунда
+    }
     return a.exec();
 }
