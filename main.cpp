@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     while(true)
     {
         file.checkFile();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1)); // секунда
+        std::this_thread::sleep_for(std::chrono::milliseconds(1)); //миллисекунда
     }
     return a.exec();
 }
