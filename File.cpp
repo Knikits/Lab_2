@@ -3,7 +3,7 @@
 
 File::File(std::string stream) // принимаем имя файла формата строки
 {
-    this->filename = QString::fromStdString(stream); // запоминает имя файла
+    this->filename = QString::fromStdString(stream); // запоминает имя файла в виде QString
     this->predInfo = new Info(); // запоминает исходное состояние
     struct stat statBuf; //специально использую #include "sys\stat.h" для запоминания инфы
     predInfo->exist = stat(filename.toStdString().c_str(), &statBuf) == 0; // далее узнаём характеристики файла

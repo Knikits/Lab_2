@@ -7,6 +7,8 @@
 
 class Info : public IInfo
 {
+private:
+
 public:
     bool operator!=(const Info&); // оператор не равно
     void operator=(const Info&); // оператор присвоения

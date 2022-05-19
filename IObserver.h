@@ -7,8 +7,8 @@
 class IInfo
 {
 public:
-    virtual ~IInfo(){} // деструктор
     virtual QString String() const = 0; // переводит данные в QString
+    virtual ~IInfo(){} // деструктор
 };
 
 //IObserver - класс (интерфейс) для класса наблюдателей
@@ -16,8 +16,8 @@ public:
 class IObserver
 {
 public:
-    virtual ~IObserver() {} // деструктор
     virtual void update(IInfo*) = 0; // обновление информации
+    virtual ~IObserver() {} // деструктор
 };
 
 #endif // IOBSERVER_H
